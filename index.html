@@ -90,11 +90,17 @@
 </section>
 
 <footer>
-    <p>© 2025 — Edouard Kalume Mulengey</p>
+  <p>© <span id="year"></span> — Edouard Kalume Mulengey</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 
 </body>
 </html>
+
 
 
 
