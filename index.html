@@ -3,136 +3,874 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
 <title>Edouard Kalume Mulengey | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0d0d0d;
+    --ink-2: #1a1a1a;
+    --ink-3: #2e2e2e;
+    --muted: #6b6b6b;
+    --muted-2: #999;
+    --border: rgba(0,0,0,0.10);
+    --border-2: rgba(0,0,0,0.06);
+    --accent: #c8a96e;
+    --accent-2: #e8c87d;
+    --surface: #faf9f6;
+    --surface-2: #f0ece3;
+    --white: #ffffff;
+    --serif: 'Playfair Display', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--surface);
+    color: var(--ink);
+    overflow-x: hidden;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul li a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav ul li a:hover { color: var(--ink); }
+
+  /* HAMBURGER (mobile) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px; height: 1.5px;
+    background: var(--ink);
+    transition: all 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    padding: 5rem 3rem 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-tagline {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    max-width: 340px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 280px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1.25rem;
+    background: var(--ink);
+    color: var(--surface);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--ink-3); transform: translateX(4px); }
+  .btn-primary .arrow { font-size: 16px; transition: transform 0.2s; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1.25rem;
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+  .btn-ghost:hover { border-color: var(--ink); background: var(--surface-2); transform: translateX(4px); }
+  .btn-ghost .arrow { font-size: 14px; }
+
+  .hero-right {
+    background: var(--ink-2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+  .hero-photo {
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(200,169,110,0.4);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-photo-placeholder {
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: var(--ink-3);
+    border: 2px solid rgba(200,169,110,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(200,169,110,0.5);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-right-deco {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.12);
+  }
+  .deco-1 { width: 320px; height: 320px; }
+  .deco-2 { width: 440px; height: 440px; }
+  .deco-3 { width: 560px; height: 560px; }
+
+  .hero-index {
+    position: absolute;
+    bottom: 2rem; left: 2rem;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 3rem; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 3rem;
+  }
+
+  /* ABOUT */
+  #about {
+    background: var(--white);
+    border-top: 1px solid var(--border-2);
+    border-bottom: 1px solid var(--border-2);
+  }
+  .about-inner {
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--muted);
+  }
+  .about-text strong { color: var(--ink); font-weight: 500; }
+
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .stat-item {
+    border-bottom: 1px solid var(--border-2);
+    padding-bottom: 1.5rem;
+  }
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+  }
+
+  /* SKILLS */
+  #skills { background: var(--surface); }
+  .skills-inner { max-width: 960px; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-item {
+    background: var(--white);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background 0.2s;
+  }
+  .skill-item:hover { background: var(--surface-2); }
+
+  .skill-icon { font-size: 1.4rem; margin-bottom: 0.25rem; }
+  .skill-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .skill-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted-2);
+    text-transform: uppercase;
+  }
+
+  /* PROJECTS */
+  #projects {
+    background: var(--ink);
+    color: var(--surface);
+  }
+  #projects .section-label { color: var(--accent); }
+  #projects .section-label::before { background: var(--accent); }
+  #projects .section-title { color: var(--surface); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .project-card {
+    background: var(--ink-2);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card:hover { background: var(--ink-3); }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .project-card:hover::before { transform: scaleX(1); }
+
+  .project-index {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--surface);
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: rgba(250,249,246,0.5);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+  }
+
+  .tech-chip {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(200,169,110,0.3);
+    padding: 3px 8px;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+  }
+  .contact-inner {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-intro {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 1rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .contact-link:hover { border-color: var(--accent); transform: translateX(4px); }
+  .contact-link-icon {
+    font-size: 1.1rem;
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--surface-2);
+    flex-shrink: 0;
+  }
+  .contact-link-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+  }
+  .contact-link-value { font-size: 13px; color: var(--ink); }
+
+  .contact-availability {
+    padding: 2rem;
+    background: var(--ink);
+    color: var(--surface);
+  }
+  .avail-status {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .avail-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  .avail-heading {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .avail-text {
+    font-size: 13px;
+    color: rgba(250,249,246,0.5);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1.25rem;
+    background: var(--accent);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    width: 100%;
+  }
+  .btn-accent:hover { background: var(--accent-2); transform: translateX(4px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(250,249,246,0.3);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .footer-brand { color: var(--accent); font-weight: 500; }
+
+  /* SCROLL ANIMATION */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; flex-direction: column; gap: 1.25rem; position: fixed; top: 60px; left: 0; right: 0; background: var(--surface); padding: 2rem 1.5rem; border-bottom: 1px solid var(--border); }
+    nav ul.open { display: flex; }
+    .hamburger { display: flex; }
+
+    #home { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 4rem 1.5rem 3rem; }
+    .hero-name { font-size: 2.8rem; }
+
+    section { padding: 4rem 1.5rem; }
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">Edouard Kalume</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<nav id="main-nav">
+  <div class="nav-logo">EKM.dev</div>
+  <ul id="nav-links">
+    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<section id="home" class="hero">
-    <img src="Ed2027.jpg" alt="Profile Photo">
-    <h1>Hello, I'm <span>Edouard Kalume Mulengey</span></h1>
-    <p>Computer Scientist • Software Developer • FullStack</p>
-    <a href="https://edwarddev28.github.io/edward-portfolio/" class="btn" target="_blank">Edward Portfolio</a>
-    <a href="https://www.bujariinvestment.co.tz/" class="btn" target="_blank">Bujari Investment</a>
-    <a href="https://www.interuniversitiestalent.com/" class="btn" target="_blank">Inter University Talent</a>
-</section>
-
-<section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-        I am a passionate computer scientist with 3 years of experience in software development. 
-        I specialize in web and mobile applications, UI/UX design, and problem-solving through technology. 
-        I enjoy building projects that are functional, user-friendly, and visually appealing.
-    </p>
-</section>
-
-<section id="skills" class="skills">
-    <h2>My Skills</h2>
-    <div class="skills-grid">
-        <div class="skill-box">HTML</div>
-        <div class="skill-box">CSS</div>
-        <div class="skill-box">JavaScript</div>
-        <div class="skill-box">PHP</div>
-        <div class="skill-box">Python</div>
-        <div class="skill-box">C++</div> 
-        <div class="skill-box">Java</div>
-        <div class="skill-box">Android/iOS Apps</div>
-        <div class="skill-box">UI/UX Design</div>
-        <div class="skill-box">Debugging & Testing</div>
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Available for work</div>
+    <h1 class="hero-name">
+      Edouard<br>Kalume<br><em>Mulengey</em>
+    </h1>
+    <p class="hero-tagline">Computer Scientist · Software Developer · FullStack — building digital experiences from Mwanza, Tanzania</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://edwarddev28.github.io/edward-portfolio/" target="_blank">
+        View Portfolio <span class="arrow">→</span>
+      </a>
+      <a class="btn-ghost" href="https://www.bujariinvestment.co.tz/" target="_blank">
+        Bujari Investment <span class="arrow">↗</span>
+      </a>
+      <a class="btn-ghost" href="https://www.interuniversitiestalent.com/" target="_blank">
+        Inter University Talent <span class="arrow">↗</span>
+      </a>
     </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-right-deco deco-1"></div>
+    <div class="hero-right-deco deco-2"></div>
+    <div class="hero-right-deco deco-3"></div>
+    <!-- Replace src with your actual photo path, e.g. src="Ed2027.jpg" -->
+    <!-- <img class="hero-photo" src="Ed2027.jpg" alt="Edouard Kalume Mulengey"> -->
+    <div class="hero-photo-placeholder" aria-hidden="true">EK</div>
+    <div class="hero-index">01 / INTRO</div>
+  </div>
 </section>
 
-<section id="projects" class="projects">
-    <h2>Some of my Projects</h2>
-    <div class="project-grid">
-        <div class="project-card">
-            <img src="1.Edo_portfolio.png" alt="Portfolio Project Screenshot">
-            <h3>Portfolio Website</h3>
-            <p>A fully responsive personal portfolio showcasing my skills and experience.</p>
-            <h4>Technologies: HTML, CSS, JavaScript</h4>
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="fade-in">
+      <div class="section-label">About me</div>
+      <h2 class="section-title">Crafting code<br>with purpose</h2>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Years of experience</div>
         </div>
-        
-        <div class="project-card">
-            <img src="1.ERTIK.png" alt="ERTIK Screenshot">
-            <h3>ERTIK Business Solution Ltd</h3>
-            <p>A modern web app for a business solution with clean UI and interactive features.</p>
-            <h4>Technologies: HTML, CSS, JavaScript</h4>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Projects shipped</div>
         </div>
-        
-        <div class="project-card">
-            <img src="1.bujari.png" alt="Bujari Investment Screenshot">
-            <h3>Bujari Investment</h3>
-            <p>An e-commerce web application for online investment and product management.</p>
-            <h4>Technologies: HTML, CSS, PHP, JavaScript</h4>
+        <div class="stat-item">
+          <div class="stat-number">10</div>
+          <div class="stat-label">Technologies mastered</div>
         </div>
-
-        <div class="project-card">
-            <img src="1.buyipa.png" alt="buyipa Screenshot">
-            <h3>Building Africa Through Innovation & Excellence</h3>
-            
-            <p>A modern web app for an Africa through innovation with clean UI and interactive features.</p>
-            <h4>Technologies: HTML, CSS, JavaScript</h4>
-        </div>
-
-        
-        <div class="project-card">
-            <img src="1.kibinya.png" alt="kibinya Screenshot">
-            <h3>SPREADING THE LIGHT ACROSS TZ</h3>
-            
-            <p>Kibinya Electrical Contractors Company Limited provides quality electrical installation, maintenance, 
-                and project services across Tanzania — ensuring safety, 
-                innovation, and reliable power for every community.</p>
-            <h4>Technologies: HTML, CSS, JavaScript</h4>
-        </div>
-
-
-
-
-
-        
-        
+      </div>
     </div>
+    <div class="fade-in fade-in-delay-1">
+      <p class="about-text">
+        I am a <strong>passionate computer scientist</strong> with 3 years of experience in software development.
+        I specialize in web and mobile applications, UI/UX design, and problem-solving through technology.<br><br>
+        I enjoy building projects that are <strong>functional, user-friendly, and visually appealing</strong> — whether it's a business platform, an e-commerce system, or a creative portfolio. My work is rooted in a genuine care for the end user.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:edevklm@gmail.com">edevklm@gmail.com</a></p>
-    <p>
-        <strong>Edward Kalume</strong><br>
-        LinkedIn: <a href="https://www.linkedin.com/in/edward-kalume-a2819b321/" target="_blank">View Profile</a><br>
-        GitHub: <a href="https://github.com/dashboard" target="_blank">edevklm</a>
-    </p>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-inner">
+    <div class="section-label fade-in">What I know</div>
+    <h2 class="section-title fade-in">Skills &amp; Technologies</h2>
+    <div class="skills-grid fade-in fade-in-delay-1">
+      <div class="skill-item">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">HTML</div>
+        <div class="skill-tag">Markup</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">🎨</div>
+        <div class="skill-name">CSS</div>
+        <div class="skill-tag">Styling</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-tag">Frontend</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">🐘</div>
+        <div class="skill-name">PHP</div>
+        <div class="skill-tag">Backend</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python</div>
+        <div class="skill-tag">Scripting</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">C++</div>
+        <div class="skill-tag">Systems</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">☕</div>
+        <div class="skill-name">Java</div>
+        <div class="skill-tag">OOP</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">📱</div>
+        <div class="skill-name">Android / iOS</div>
+        <div class="skill-tag">Mobile</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">✏️</div>
+        <div class="skill-name">UI/UX Design</div>
+        <div class="skill-tag">Design</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">🔍</div>
+        <div class="skill-name">Debug &amp; Testing</div>
+        <div class="skill-tag">QA</div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Selected work</div>
+  <h2 class="section-title fade-in">Projects</h2>
+  <div class="projects-grid fade-in fade-in-delay-1">
+    <div class="project-card">
+      <div class="project-index">01</div>
+      <h3 class="project-title">Personal Portfolio</h3>
+      <p class="project-desc">A fully responsive personal portfolio showcasing skills, experience, and work across multiple live projects.</p>
+      <div class="project-tech">
+        <span class="tech-chip">HTML</span>
+        <span class="tech-chip">CSS</span>
+        <span class="tech-chip">JavaScript</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-index">02</div>
+      <h3 class="project-title">ERTIK Business Solution Ltd</h3>
+      <p class="project-desc">A modern web app for a business solution company with clean UI and rich interactive features.</p>
+      <div class="project-tech">
+        <span class="tech-chip">HTML</span>
+        <span class="tech-chip">CSS</span>
+        <span class="tech-chip">JavaScript</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-index">03</div>
+      <h3 class="project-title">Bujari Investment</h3>
+      <p class="project-desc">An e-commerce web application for online investment and product management with a PHP backend.</p>
+      <div class="project-tech">
+        <span class="tech-chip">HTML</span>
+        <span class="tech-chip">CSS</span>
+        <span class="tech-chip">PHP</span>
+        <span class="tech-chip">JavaScript</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-index">04</div>
+      <h3 class="project-title">Building Africa Through Innovation</h3>
+      <p class="project-desc">A modern platform celebrating African innovation and excellence with a clean, purposeful interface.</p>
+      <div class="project-tech">
+        <span class="tech-chip">HTML</span>
+        <span class="tech-chip">CSS</span>
+        <span class="tech-chip">JavaScript</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-index">05</div>
+      <h3 class="project-title">Kibinya Electrical Contractors</h3>
+      <p class="project-desc">Web presence for an electrical contractor spanning all of Tanzania — safety, innovation, and reliable power in every community.</p>
+      <div class="project-tech">
+        <span class="tech-chip">HTML</span>
+        <span class="tech-chip">CSS</span>
+        <span class="tech-chip">JavaScript</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner fade-in">
+    <div>
+      <div class="section-label">Get in touch</div>
+      <h2 class="section-title">Let's work<br>together</h2>
+      <p class="contact-intro">Have a project in mind? I'm open to freelance work, collaboration, or full-time opportunities across East Africa and beyond.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:edevklm@gmail.com">
+          <div class="contact-link-icon">✉️</div>
+          <div>
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-value">edevklm@gmail.com</div>
+          </div>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/edward-kalume-a2819b321/" target="_blank">
+          <div class="contact-link-icon">💼</div>
+          <div>
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-value">Edward Kalume</div>
+          </div>
+        </a>
+        <a class="contact-link" href="https://github.com/dashboard" target="_blank">
+          <div class="contact-link-icon">⌨️</div>
+          <div>
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-value">edevklm</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="fade-in fade-in-delay-2">
+      <div class="contact-availability">
+        <div class="avail-status">
+          <span class="avail-dot"></span> Status
+        </div>
+        <div class="avail-heading">Open to<br>new projects</div>
+        <p class="avail-text">Based in Mwanza, Tanzania. Available for remote work worldwide and local projects across East Africa.</p>
+        <a class="btn-accent" href="mailto:edevklm@gmail.com">
+          Start a conversation <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© <span id="year"></span> — Edouard Kalume Mulengey</p>
+  <span class="footer-brand">EKM</span>
+  <span>© <span id="year"></span> — Edouard Kalume Mulengey</span>
+  <span>Mwanza, Tanzania</span>
 </footer>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("year").textContent = new Date().getFullYear();
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul li a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
+    });
   });
 </script>
 
-
-
 </body>
 </html>
-
-
-
-
-
