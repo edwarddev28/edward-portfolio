@@ -193,6 +193,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
 }
 </style>
 </head>
+  
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -271,14 +272,25 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
   </div>
 </section>
 
+  
 <section id="projects" class="s alt" aria-labelledby="projects-heading">
+  
   <div class="wrap">
     <div class="reveal"><p class="kicker">Selected work</p><h2 id="projects-heading" class="h2">Recent projects</h2></div>
     <div class="projects">
       <a class="project reveal" href="https://banzafashionboutique.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Banza Fashion Boutique (opens in new tab)">
+        
         <div><h3>Banza Fashion Boutique</h3>
         <p>Full-stack fashion e-commerce platform with a responsive storefront, product and cart workflows, checkout and order processing, administrator tools, database-backed data, and customer/order email notifications. Built and maintained through production debugging and Linux process management.</p>
-        <div class="chips"><span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MySQL</span><span class="chip">REST API</span><span class="chip">SMTP</span><span class="chip">Linux / PM2</span></div></div>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Express</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">REST API</span>
+          <span class="chip">SMTP</span>
+          <span class="chip">Linux / PM2</span></div></div>
         <span class="visit" aria-hidden="true">↗</span>
       </a>
       <a class="project reveal" href="https://edwarddev28.github.io/edward-portfolio/" target="_blank" rel="noopener noreferrer" aria-label="View Personal Portfolio (opens in new tab)">
@@ -343,7 +355,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 $('#year').textContent=new Date().getFullYear();
 
 // Skills
-const skills=[["🌐","HTML","Markup"],["🎨","CSS","Styling"],["⚡","JavaScript","Frontend"],["🐘","PHP","Backend"],["🐍","Python","Scripting"],["⚙️","C++","Systems"],["☕","Java","OOP"],["📱","Android / iOS","Mobile"],["✏️","UI / UX Design","Design"],["🔍","Debug & Testing","QA"],["⚛️","React","Frontend UI"],["🟢","Node.js","Runtime"],["🚏","Express.js","Backend APIs"],["🗄️","MySQL","Relational database"],["🔌","REST APIs","Integration"],["🔐","Authentication","Access control"],["✉️","SMTP Email","Notifications"],["🐧","Linux & PM2","Deployment"],["🛠️","Production Debugging","Operations"]];
+const skills=[["🌐","HTML","Markup"],["🎨","CSS","Styling"],["⚡","JavaScript","Frontend"],["🐘","PHP","Backend"],["🐍","Python","Scripting"],["⚙️","C++","Systems"],["☕","Java","OOP"],["📱","Android / iOS","Mobile"],["✏️","UI / UX Design","Design"],["🔍","Debug & Testing","QA"],["⚛️","React","Frontend UI"], ["🟢","Vue","Frontend UI"], ["🟢","Node.js","Runtime"],["🚏","Express.js","Backend APIs"],["🗄️","MySQL","Relational database"],["🔌","REST APIs","Integration"],["🔐","Authentication","Access control"],["✉️","SMTP Email","Notifications"],["🐧","Linux & PM2","Deployment"],["🛠️","Production Debugging","Operations"]];
 $('#skillGrid').innerHTML=skills.map((s,i)=>`<div class="skill reveal" style="--i:${i%5}"><span class="ic" aria-hidden="true">${s[0]}</span><div class="nm">${s[1].replace('&','&amp;')}</div><div class="ct">${s[2]}</div></div>`).join('');
 
 // Typed roles
