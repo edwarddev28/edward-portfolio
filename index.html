@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edouard Kalume Mulengey | FullStack Developer — East Africa</title>
 <meta name="description" content="Portfolio of Edouard Kalume Mulengey — Computer Scientist and FullStack Developer in East Africa. Web, mobile, and UI/UX design.">
 <meta name="author" content="Edouard Kalume Mulengey">
 <meta name="keywords" content="Edouard Kalume, FullStack Developer, Tanzania, Web Developer, Mobile Developer, Dar Es Salaam">
@@ -10,22 +11,21 @@
 <meta property="og:description" content="Computer Scientist and FullStack Developer from Dar Es Salaam, Tanzania. Building purposeful digital experiences.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://edwarddev28.github.io/edward-portfolio/">
-<meta property="og:image" content="Ed2027.jpg">
+<meta property="og:image" content="https://edwarddev28.github.io/edward-portfolio/Ed2027.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://edwarddev28.github.io/edward-portfolio/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232563eb'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='19' fill='white' font-weight='700'>E</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f766e'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='19' fill='white' font-weight='700'>E</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<title>Edouard Kalume Mulengey | FullStack Developer — East Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a1122;--bg2:#0e1730;--card:#121d3a;--card2:#17244a;
-  --line:rgba(148,174,255,.12);--line2:rgba(148,174,255,.24);
-  --text:#eef2fb;--text2:#aab6d3;--text3:#74829f;
-  --blue:#4f8cff;--cyan:#38d6e8;--green:#34d399;
-  --grad:linear-gradient(120deg,#4f8cff,#38d6e8);
+  --bg:#0b1118;--bg2:#101923;--card:#142030;--card2:#1a2a3d;
+  --line:rgba(160,190,210,.12);--line2:rgba(160,190,210,.26);
+  --text:#edf2f7;--text2:#a9b8c8;--text3:#7587a0;
+  --teal:#2dd4bf;--gold:#e8b04a;--blue:#5b9dff;
+  --grad:linear-gradient(120deg,#5b9dff,#2dd4bf);
   --serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
   --ease:cubic-bezier(.22,1,.36,1)
 }
@@ -33,17 +33,18 @@ html{scroll-behavior:smooth;font-size:17px;scroll-padding-top:80px}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--grad);transform-origin:left;transform:scaleX(0);z-index:300}
-.skip-link{position:absolute;top:-100px;left:1rem;background:var(--blue);color:#fff;padding:.6rem 1rem;border-radius:6px;z-index:400;text-decoration:none}
+.skip-link{position:absolute;top:-100px;left:1rem;background:var(--teal);color:#04201c;padding:.6rem 1rem;border-radius:6px;z-index:400;text-decoration:none}
 .skip-link:focus{top:1rem}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 /* NAV */
-nav.main{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3.5rem;transition:padding .35s var(--ease),background .35s,box-shadow .35s;border-bottom:1px solid transparent}
-nav.main.scrolled{padding:.8rem 3.5rem;background:rgba(10,17,34,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
-.nav-logo{font-family:var(--serif);font-size:1.25rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:.6rem}
-.nav-logo i{font-style:normal;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--grad);color:#06122b;font-size:1rem}
+nav.main{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3.5rem;transition:padding .35s var(--ease),background .35s;border-bottom:1px solid transparent}
+nav.main.scrolled{padding:.75rem 3.5rem;background:rgba(11,17,24,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.nav-logo i{font-style:normal;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--grad);color:#06182a;font-size:1rem}
 nav ul{list-style:none;display:flex;gap:2.2rem}
-nav ul a{font-size:.82rem;font-weight:500;color:var(--text2);text-decoration:none;position:relative;padding:.3rem 0;transition:color .25s}
-nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+nav ul a{font-size:.84rem;font-weight:500;color:var(--text2);text-decoration:none;position:relative;padding:.3rem 0;transition:color .25s}
+nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
 nav ul a:hover,nav ul a.active{color:var(--text)}
 nav ul a:hover::after,nav ul a.active::after{transform:scaleX(1)}
 .hamburger{display:none;flex-direction:column;gap:6px;background:none;border:none;padding:6px;cursor:pointer}
@@ -52,123 +53,128 @@ nav ul a:hover::after,nav ul a.active::after{transform:scaleX(1)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
-/* HERO */
+/* HERO — the one orchestrated moment */
 #home{min-height:100vh;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:3rem;padding:8rem 3.5rem 5rem;position:relative;overflow:hidden}
-.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;pointer-events:none;animation:drift 16s ease-in-out infinite alternate}
-.orb.a{width:480px;height:480px;background:#2563eb;top:-120px;right:-80px}
-.orb.b{width:360px;height:360px;background:#0ea5b7;bottom:-100px;left:30%;animation-duration:20s;animation-delay:-6s}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.28;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+.orb.a{width:480px;height:480px;background:#2f6fe0;top:-120px;right:-80px}
+.orb.b{width:360px;height:360px;background:#0f9d8f;bottom:-100px;left:30%;animation-duration:22s}
 @keyframes drift{to{transform:translate(-60px,50px) scale(1.15)}}
 #home::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0,transparent 70%);opacity:.5}
 .hero-left,.hero-right{position:relative;z-index:1}
-.hello{font-size:1.05rem;color:var(--text2);margin-bottom:.8rem;display:flex;align-items:center;gap:.8rem}
-.hello::before{content:'';width:36px;height:2px;background:var(--grad)}
+.hello{font-size:1rem;color:var(--text2);margin-bottom:.8rem;display:flex;align-items:center;gap:.8rem}
+.hello::before{content:'';width:36px;height:2px;background:var(--gold)}
 .hero-name{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,6vw,5.4rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:1.4rem}
-.hero-name .word{display:block;overflow:hidden;padding-bottom:.08em}
-.hero-name .word span{display:inline-block;transform:translateY(110%);animation:rise 1s var(--ease) forwards}
-.hero-name .word:nth-child(2) span{animation-delay:.12s}
+.hero-name .word{display:block;overflow:hidden;padding-bottom:.1em}
+.hero-name .word span{display:inline-block;transform:translateY(110%);animation:rise 1.1s var(--ease) forwards}
+.hero-name .word:nth-child(2) span{animation-delay:.15s}
 .hero-name .grad span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;font-weight:400}
 @keyframes rise{to{transform:none}}
 .hero-role{font-size:1.2rem;color:var(--text2);margin-bottom:1.4rem;min-height:2rem}
-.hero-role b{color:var(--cyan);font-weight:500}
-.caret{display:inline-block;width:2px;height:1.1em;background:var(--cyan);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+.hero-role b{color:var(--teal);font-weight:500}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--teal);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .hero-desc{max-width:480px;color:var(--text2);font-weight:300;margin-bottom:2.2rem}
 .fade-in{opacity:0;transform:translateY(18px);animation:up .9s var(--ease) forwards}
 @keyframes up{to{opacity:1;transform:none}}
 .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.5rem;border-radius:10px;font-size:.88rem;font-weight:500;text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s,background .3s,border-color .3s}
-.btn.solid{background:var(--grad);color:#06122b;box-shadow:0 8px 28px rgba(79,140,255,.3)}
-.btn.solid:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(79,140,255,.45)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.5rem;border-radius:10px;font-size:.9rem;font-weight:500;text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s,background .3s,border-color .3s}
+.btn.solid{background:var(--gold);color:#2a1d04;box-shadow:0 8px 26px rgba(232,176,74,.25)}
+.btn.solid:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(232,176,74,.4)}
 .btn.ghost{border:1px solid var(--line2);color:var(--text)}
-.btn.ghost:hover{border-color:var(--cyan);background:rgba(56,214,232,.08);transform:translateY(-3px)}
-.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.btn.ghost:hover{border-color:var(--teal);background:rgba(45,212,191,.08);transform:translateY(-3px)}
 .hero-right{display:flex;flex-direction:column;align-items:center;gap:1.8rem}
 .photo{position:relative;width:270px;height:340px;border-radius:22px;animation:float 6s ease-in-out infinite}
-.photo::before{content:'';position:absolute;inset:-2px;border-radius:24px;background:var(--grad);z-index:0;opacity:.8}
+.photo::before{content:'';position:absolute;inset:-2px;border-radius:24px;background:var(--grad);opacity:.85}
 .photo::after{content:'';position:absolute;inset:14px -16px -16px 14px;border:1px solid var(--line2);border-radius:22px;z-index:-1}
 .photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:21px;display:block;background:var(--card)}
 @keyframes float{50%{transform:translateY(-12px)}}
-.meta{width:100%;max-width:340px;background:rgba(18,29,58,.7);border:1px solid var(--line);border-radius:14px;padding:.4rem 1.2rem;backdrop-filter:blur(8px)}
+.meta{width:100%;max-width:340px;background:rgba(20,32,48,.7);border:1px solid var(--line);border-radius:14px;padding:.4rem 1.2rem;backdrop-filter:blur(8px)}
 .meta div{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.8rem}
 .meta div:last-child{border:0}
-.meta dt{color:var(--text3)}.meta dd{color:var(--text);text-align:right}
-.meta .ok{color:var(--green)}
-.meta .ok::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:.5rem;animation:pulse 2s infinite}
+.meta dt{color:var(--text3)}.meta dd{text-align:right}
+.ok{color:#34d399}
+.ok::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#34d399;margin-right:.5rem;animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}100%{box-shadow:0 0 0 9px rgba(52,211,153,0)}}
 
 /* SECTIONS */
-section.s{padding:7rem 3.5rem;border-top:1px solid var(--line);position:relative}
+section.s{padding:6.5rem 3.5rem;border-top:1px solid var(--line)}
 section.alt{background:var(--bg2)}
 .wrap{max-width:1100px;margin:0 auto}
-.kicker{font-size:.85rem;font-weight:500;color:var(--cyan);margin-bottom:.7rem}
-.h2{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.1;letter-spacing:-.015em;margin-bottom:2.8rem}
+.kicker{font-size:.9rem;font-weight:500;color:var(--gold);margin-bottom:.6rem}
+.h2{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,4vw,3.1rem);line-height:1.1;letter-spacing:-.015em;margin-bottom:2.6rem}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start}
-.stat{display:flex;justify-content:space-between;align-items:baseline;padding:1.3rem 0;border-bottom:1px solid var(--line)}
-.stat .n{font-family:var(--serif);font-size:3rem;font-weight:600;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat{display:flex;justify-content:space-between;align-items:baseline;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.stat .n{font-family:var(--serif);font-size:2.8rem;font-weight:600;line-height:1;color:var(--teal)}
 .stat .d{font-size:.8rem;color:var(--text3);text-align:right}
-.quote{font-family:var(--serif);font-size:1.5rem;font-style:italic;color:var(--text);line-height:1.45;border-left:3px solid var(--blue);padding-left:1.4rem;margin-bottom:1.8rem}
+.quote{font-family:var(--serif);font-size:1.45rem;font-style:italic;line-height:1.45;border-left:3px solid var(--gold);padding-left:1.4rem;margin-bottom:1.8rem}
 .about-para{color:var(--text2);font-weight:300;margin-bottom:1.2rem}
 .about-para strong{color:var(--text);font-weight:500}
 .ach{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.ach div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.3rem;transition:transform .35s var(--ease),border-color .3s}
-.ach div:hover{transform:translateY(-5px);border-color:var(--line2)}
-.ach .n{font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--cyan);line-height:1.1}
+.ach>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.2rem;transition:transform .35s var(--ease),border-color .3s}
+.ach>div:hover{transform:translateY(-4px);border-color:var(--line2)}
+.ach .n{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--gold);line-height:1.1}
 .ach .l{font-size:.78rem;color:var(--text3)}
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
 .tag{font-size:.78rem;color:var(--text2);border:1px solid var(--line2);border-radius:99px;padding:.35rem .9rem;transition:.25s}
-.tag:hover{color:var(--cyan);border-color:var(--cyan)}
+.tag:hover{color:var(--teal);border-color:var(--teal)}
+
+/* TARGET POSITIONS */
+.roles{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.9rem;list-style:none}
+.roles li{display:flex;align-items:center;gap:.8rem;padding:1rem 1.2rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:10px;font-size:.92rem;font-weight:500;transition:transform .3s var(--ease),border-color .3s,background .3s}
+.roles li:hover{transform:translateX(6px);border-left-color:var(--gold);background:var(--card2)}
 
 /* SKILLS */
-.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem}
-.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.4rem;position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .3s,box-shadow .3s}
-.skill::before,.project::before{content:'';position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(79,140,255,.18),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.3rem;position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .3s,box-shadow .3s}
+.skill::before,.project::before{content:'';position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(45,212,191,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
 .skill:hover::before,.project:hover::before{opacity:1}
-.skill:hover{transform:translateY(-6px);border-color:var(--line2);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-.skill .ic{font-size:1.6rem;display:block;margin-bottom:.7rem;transition:transform .4s var(--ease)}
+.skill:hover{transform:translateY(-5px);border-color:var(--line2);box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.skill .ic{font-size:1.5rem;display:block;margin-bottom:.6rem;transition:transform .4s var(--ease)}
 .skill:hover .ic{transform:scale(1.2) rotate(-6deg)}
-.skill .nm{font-weight:600;font-size:.95rem}
+.skill .nm{font-weight:600;font-size:.94rem}
 .skill .ct{font-size:.76rem;color:var(--text3)}
 
 /* PROJECTS */
 .projects{display:grid;gap:1.2rem}
-.group{font-size:.85rem;font-weight:500;color:var(--text3);margin:1.6rem 0 .2rem;display:flex;align-items:center;gap:1rem}
+.group{font-size:.9rem;font-weight:500;color:var(--text3);margin:1.6rem 0 .2rem;display:flex;align-items:center;gap:1rem}
 .group::after{content:'';flex:1;height:1px;background:var(--line)}
-.project{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:2rem;text-decoration:none;position:relative;overflow:hidden;transition:transform .4s var(--ease),border-color .3s,box-shadow .3s}
-.project:hover{transform:translateY(-6px);border-color:var(--line2);box-shadow:0 22px 50px rgba(0,0,0,.4)}
-.project h3{font-family:var(--serif);font-size:1.6rem;font-weight:600;margin-bottom:.5rem}
-.project p{font-size:.88rem;color:var(--text2);font-weight:300;max-width:620px;margin-bottom:1rem}
+.project{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2rem;text-decoration:none;position:relative;overflow:hidden;transition:transform .4s var(--ease),border-color .3s,box-shadow .3s}
+a.project:hover{transform:translateY(-5px);border-color:var(--line2);box-shadow:0 20px 46px rgba(0,0,0,.4)}
+.project h3{font-family:var(--serif);font-size:1.55rem;font-weight:600;margin-bottom:.5rem}
+.project p{font-size:.88rem;color:var(--text2);font-weight:300;max-width:640px;margin-bottom:1rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
-.chip{font-size:.72rem;color:var(--cyan);background:rgba(56,214,232,.08);border:1px solid rgba(56,214,232,.2);border-radius:99px;padding:.2rem .7rem}
-.visit{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1px solid var(--line2);font-size:1.2rem;transition:.4s var(--ease)}
-.project:hover .visit{background:var(--grad);color:#06122b;border-color:transparent;transform:rotate(45deg)}
+.chip{font-size:.72rem;color:var(--teal);background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.22);border-radius:99px;padding:.2rem .7rem}
+.visit{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;border:1px solid var(--line2);font-size:1.2rem;transition:.4s var(--ease)}
+a.project:hover .visit{background:var(--gold);color:#2a1d04;border-color:transparent;transform:rotate(45deg)}
+.project.static{grid-template-columns:1fr;border-style:dashed}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
 .sub{color:var(--text2);font-weight:300;margin-bottom:2.2rem;max-width:400px}
 .citem{display:flex;align-items:center;gap:1.2rem;padding:1.1rem 1.3rem;margin-bottom:.8rem;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;transition:transform .35s var(--ease),border-color .3s,background .3s}
-.citem:hover{transform:translateX(8px);border-color:var(--blue);background:var(--card2)}
-.citem .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(79,140,255,.12);font-size:1.15rem}
+.citem:hover{transform:translateX(8px);border-color:var(--teal);background:var(--card2)}
+.citem .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(45,212,191,.12);font-size:1.15rem}
 .citem small{display:block;font-size:.74rem;color:var(--text3);line-height:1.3}
 .status{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line2);border-radius:20px;padding:2.3rem;position:relative;overflow:hidden}
 .status::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
-.badge{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--green);margin-bottom:1.3rem}
-.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-.status h3{font-family:var(--serif);font-size:2.2rem;font-weight:600;line-height:1.15;margin-bottom:1rem}
+.badge{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;color:#34d399;margin-bottom:1.3rem}
+.badge i{width:8px;height:8px;border-radius:50%;background:#34d399;animation:pulse 2s infinite}
+.status h3{font-family:var(--serif);font-size:2.1rem;font-weight:600;line-height:1.15;margin-bottom:1rem}
 .status p{font-size:.9rem;color:var(--text2);font-weight:300;margin-bottom:1.8rem}
 .rows{border-top:1px solid var(--line);padding-top:1.2rem;margin-bottom:1.8rem}
 .rows div{display:flex;justify-content:space-between;font-size:.82rem;padding:.35rem 0}
-.rows dt{color:var(--text3)}.rows dd{color:var(--text)}
+.rows dt{color:var(--text3)}
 .status .btn{width:100%;justify-content:center}
 
 footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:var(--text3)}
 .fb{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--text)}
 
-/* REVEAL (one consistent, staggered entrance) */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
 .reveal.in{opacity:1;transform:none}
-.reveal.in.skill,.reveal.in.project,.reveal.in.ach div{transition:transform .35s var(--ease),border-color .3s,box-shadow .3s,opacity .9s var(--ease)}
+.reveal.in.skill,.reveal.in.project,.reveal.in.roles li{transition:transform .35s var(--ease),border-color .3s,box-shadow .3s,background .3s,opacity .9s var(--ease);transition-delay:0s}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -179,7 +185,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
 @media (max-width:960px){
   html{font-size:16px}
   nav.main,nav.main.scrolled{padding:1rem 1.4rem}
-  nav ul{display:none;flex-direction:column;gap:1.3rem;position:fixed;top:62px;left:0;right:0;background:rgba(10,17,34,.97);backdrop-filter:blur(16px);padding:1.8rem 1.4rem;border-bottom:1px solid var(--line)}
+  nav ul{display:none;flex-direction:column;gap:1.3rem;position:fixed;top:62px;left:0;right:0;background:rgba(11,17,24,.97);backdrop-filter:blur(16px);padding:1.8rem 1.4rem;border-bottom:1px solid var(--line)}
   nav ul.open{display:flex}
   .hamburger{display:flex}
   #home{grid-template-columns:1fr;padding:7rem 1.4rem 4rem;gap:3rem}
@@ -193,7 +199,6 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
 }
 </style>
 </head>
-  
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -203,6 +208,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
   <ul id="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#positions">Positions</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -250,13 +256,8 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
     </div>
     <div class="reveal" style="--i:2">
       <blockquote class="quote">Passionate about turning ideas into polished, functional software.</blockquote>
-      
-      <p class="about-para">I am a <strong>computer scientist</strong> graduate (B.Sc., 2026, CGPA 3.62/4.00) with foundational programming and IT skills developed through university studies and independent software development projects, from 2024-2026. 
-        Familiar with web technologies, databases, backend development and software troubleshooting, with practical project experience in JavaScript, PHP, Python, React, Vue.js, 
-        Node.js, MySQL and MongoDB.</p>
-      
-      <p class="about-para">Whether it's an e-commerce platform serving <strong>hundreds of products</strong>, a business solution with real clients, 
-        or a sleek portfolio — I bring the same commitment to <strong>quality, usability, and visual precision</strong> to every project.</p>
+      <p class="about-para">I am a <strong>computer scientist</strong> graduate (B.Sc., 2026, CGPA 3.62/4.00) with foundational programming and IT skills developed through university studies and independent software development projects, from 2024-2026. Familiar with web technologies, databases, backend development and software troubleshooting, with practical project experience in JavaScript, PHP, Python, React, Vue.js, Node.js, MySQL and MongoDB.</p>
+      <p class="about-para">Whether it's an e-commerce platform serving <strong>hundreds of products</strong>, a business solution with real clients, or a sleek portfolio — I bring the same commitment to <strong>quality, usability, and visual precision</strong> to every project.</p>
       <div class="ach">
         <div><div class="n" data-count="500" data-suffix="+">500+</div><div class="l">Products on Banza Fashion Boutique platform</div></div>
         <div><div class="n" data-count="1" data-suffix="+">1+</div><div class="l">Real paying clients</div></div>
@@ -270,49 +271,38 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
   </div>
 </section>
 
-<section id="skills" class="s" aria-labelledby="skills-heading">
+<section id="positions" class="s" aria-labelledby="positions-heading">
   <div class="wrap">
-    <div class="reveal"><p class="kicker">Preferred</p><h2 id="skills-heading" class="h2">TARGET POSITIONS</h2></div>
-    <div class="skills" id="skillGrid"></div>
-      <p  class="kicker> 
-        <li>Junior Web Developer  | </li>
-        <li>Entry-Level Software Developer </li>
-        <li>Junior PHP Developer</li>
-        <li>Junior JavaScript Developer</li>
-        <li>Junior Computer Programmer</li>
-        <li>IT Support Technician</li>
-        <li>Help Desk Technician</li>
-        <li>Computer Support Technician</li>
-        <li>Junior Technical Support Specialist</li>
-      </p>
+    <div class="reveal"><p class="kicker">Preferred</p><h2 id="positions-heading" class="h2">Target positions</h2></div>
+    <ul class="roles reveal">
+      <li>Junior Web Developer</li>
+      <li>Entry-Level Software Developer</li>
+      <li>Junior PHP Developer</li>
+      <li>Junior JavaScript Developer</li>
+      <li>Junior Computer Programmer</li>
+      <li>IT Support Technician</li>
+      <li>Help Desk Technician</li>
+      <li>Computer Support Technician</li>
+      <li>Junior Technical Support Specialist</li>
+    </ul>
   </div>
 </section>
 
-<section id="skills" class="s" aria-labelledby="skills-heading">
+<section id="skills" class="s alt" aria-labelledby="skills-heading">
   <div class="wrap">
     <div class="reveal"><p class="kicker">What I know</p><h2 id="skills-heading" class="h2">Skills &amp; technologies</h2></div>
     <div class="skills" id="skillGrid"></div>
   </div>
 </section>
-<section id="projects" class="s alt" aria-labelledby="projects-heading">
-  
+
+<section id="projects" class="s" aria-labelledby="projects-heading">
   <div class="wrap">
     <div class="reveal"><p class="kicker">Selected work</p><h2 id="projects-heading" class="h2">Recent projects</h2></div>
     <div class="projects">
       <a class="project reveal" href="https://banzafashionboutique.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Banza Fashion Boutique (opens in new tab)">
-        
         <div><h3>Banza Fashion Boutique</h3>
-        <p>Full-stack fashion e-commerce platform with a responsive storefront, product and cart workflows, checkout and order processing, 
-          administrator tools, database-backed data, and customer/order email notifications. Built and maintained through production debugging and Linux process management.</p>
-        <div class="chips">
-          <span class="chip">React</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">Express</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">REST API</span>
-          <span class="chip">SMTP</span>
-          <span class="chip">Linux / PM2</span></div></div>
+        <p>Full-stack fashion e-commerce platform with a responsive storefront, product and cart workflows, checkout and order processing, administrator tools, database-backed data, and customer/order email notifications. Built and maintained through production debugging and Linux process management.</p>
+        <div class="chips"><span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MySQL</span><span class="chip">REST API</span><span class="chip">SMTP</span><span class="chip">Linux / PM2</span></div></div>
         <span class="visit" aria-hidden="true">↗</span>
       </a>
       <a class="project reveal" href="https://edwarddev28.github.io/edward-portfolio/" target="_blank" rel="noopener noreferrer" aria-label="View Personal Portfolio (opens in new tab)">
@@ -334,35 +324,16 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
         <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div></div>
         <span class="visit" aria-hidden="true">↗</span>
       </a>
-
-      <a class="project reveal" href="" target="" rel="noopener noreferrer" aria-label="Electrical Experience (opens in new tab)">
+      <div class="project static reveal">
         <div><h3>Additional Experience</h3>
-        <p>Electrical maintenance professional with practical experience in electrical installation,
-          industrial maintenance, troubleshooting, and electrical repairs. 
-          Holds a High School Diploma in General Electricity and a Bachelor of Science in Computer Science. 
-          Familiar with residential and industrial electrical wiring, identifying electrical faults, 
-          using maintenance tools, and following workplace safety procedures. 
-          Multilingual communicator in French, English, and Swahili, with a valid driving license.</p>
-        <div class="chips">
-          <span class="chip"> Electrical installation and maintenance</span>
-          <span class="chip">Residential and industrial wiring</span>
-          <span class="chip">Electrical troubleshooting</span>
-          <span class="chip">Fault identification and basic repairs</span>
-          <span class="chip">Industrial maintenance support</span>
-          <span class="chip">Workplace safety awareness</span></div></div>
-        <span class="visit" aria-hidden="true">↗</span>
-      </a>
-      
+        <p>Electrical maintenance professional with practical experience in electrical installation, industrial maintenance, troubleshooting, and electrical repairs. Holds a High School Diploma in General Electricity and a Bachelor of Science in Computer Science. Familiar with residential and industrial electrical wiring, identifying electrical faults, using maintenance tools, and following workplace safety procedures. Multilingual communicator in French, English, and Swahili, with a valid driving license.</p>
+        <div class="chips"><span class="chip">Electrical installation and maintenance</span><span class="chip">Residential and industrial wiring</span><span class="chip">Electrical troubleshooting</span><span class="chip">Fault identification and basic repairs</span><span class="chip">Industrial maintenance support</span><span class="chip">Workplace safety awareness</span></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-
-  
-
-<section id="contact" class="s" aria-labelledby="contact-heading">
+<section id="contact" class="s alt" aria-labelledby="contact-heading">
   <div class="wrap contact-grid">
     <div class="reveal">
       <p class="kicker">Get in touch</p>
@@ -400,28 +371,22 @@ const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelecto
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 $('#year').textContent=new Date().getFullYear();
 
-// Skills
-const skills=[["🌐","HTML","Markup"],["🎨","CSS","Styling"],["⚡","JavaScript","Frontend"],["🐘","PHP","Backend"],["🐍","Python","Scripting"],["⚙️","C++","Systems"],["☕","Java","OOP"],["📱","Android / iOS","Mobile"],["✏️","UI / UX Design","Design"],["🔍","Debug & Testing","QA"],["⚛️","React","Frontend UI"], ["🟢","Vue","Frontend UI"], ["🟢","Node.js","Runtime"],["🚏","Express.js","Backend APIs"],["🗄️","MySQL","Relational database"],["🔌","REST APIs","Integration"],["🔐","Authentication","Access control"],["✉️","SMTP Email","Notifications"],["🐧","Linux & PM2","Deployment"],["🛠️","Production Debugging","Operations"]];
+const skills=[["🌐","HTML","Markup"],["🎨","CSS","Styling"],["⚡","JavaScript","Frontend"],["🐘","PHP","Backend"],["🐍","Python","Scripting"],["⚙️","C++","Systems"],["☕","Java","OOP"],["📱","Android / iOS","Mobile"],["✏️","UI / UX Design","Design"],["🔍","Debug & Testing","QA"],["⚛️","React","Frontend UI"],["🟢","Vue","Frontend UI"],["🟩","Node.js","Runtime"],["🚏","Express.js","Backend APIs"],["🗄️","MySQL","Relational database"],["🔌","REST APIs","Integration"],["🔐","Authentication","Access control"],["✉️","SMTP Email","Notifications"],["🐧","Linux & PM2","Deployment"],["🛠️","Production Debugging","Operations"]];
 $('#skillGrid').innerHTML=skills.map((s,i)=>`<div class="skill reveal" style="--i:${i%5}"><span class="ic" aria-hidden="true">${s[0]}</span><div class="nm">${s[1].replace('&','&amp;')}</div><div class="ct">${s[2]}</div></div>`).join('');
 
-// Typed roles
 const roles=["Computer Scientist","FullStack Developer","UI/UX Designer","Lifelong Learner"],t=$('#typed');
 if(reduce){t.textContent=roles[1]}else{let r=0,c=0,del=false;(function tick(){const w=roles[r];t.textContent=w.slice(0,c);if(!del&&c===w.length){del=true;return setTimeout(tick,1600)}if(del&&c===0){del=false;r=(r+1)%roles.length}c+=del?-1:1;setTimeout(tick,del?35:70)})()}
 
-// Reveal + count-up
 function count(el){const end=+el.dataset.count,suf=el.dataset.suffix||'';if(reduce){el.textContent=end+suf;return}const t0=performance.now(),d=1400;(function f(n){const p=Math.min((n-t0)/d,1),e=1-Math.pow(1-p,4);el.textContent=Math.round(end*e)+suf;if(p<1)requestAnimationFrame(f)})(t0)}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');$$('[data-count]',e.target).forEach(count);io.unobserve(e.target)}}),{threshold:.12});
 $$('.reveal').forEach(el=>io.observe(el));
 
-// Spotlight on cards
 $$('.skill,.project').forEach(el=>el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',e.clientX-r.left+'px');el.style.setProperty('--my',e.clientY-r.top+'px')}));
 
-// Scroll: progress bar, nav state, active link
 const nav=$('#nav'),bar=$('#progress'),secs=$$('section[id]'),links=$$('#nav-links a');
 function onScroll(){const h=document.documentElement,y=scrollY;bar.style.transform=`scaleX(${y/(h.scrollHeight-innerHeight||1)})`;nav.classList.toggle('scrolled',y>30);let cur='';secs.forEach(s=>{if(y>=s.offsetTop-160)cur=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-// Mobile menu
 const ul=$('#nav-links'),hb=$('#hamburger');
 function setMenu(o){ul.classList.toggle('open',o);hb.classList.toggle('open',o);hb.setAttribute('aria-expanded',String(o))}
 hb.addEventListener('click',()=>setMenu(!ul.classList.contains('open')));
