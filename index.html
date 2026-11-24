@@ -168,8 +168,22 @@ a.project:hover .visit{background:var(--gold);color:#2a1d04;border-color:transpa
 .rows dt{color:var(--text3)}
 .status .btn{width:100%;justify-content:center}
 
-footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:var(--text3)}
-.fb{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--text)}
+footer{background:#080d13;border-top:1px solid var(--line2);position:relative;font-size:.85rem;color:var(--text3)}
+footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--grad)}
+.f-top{max-width:1100px;margin:0 auto;padding:4rem 0 3rem;display:grid;grid-template-columns:1.6fr 1fr 1.2fr;gap:3rem}
+.fb{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--text);display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem;text-decoration:none}
+.fb i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--grad);color:#06182a;font-size:.95rem}
+.f-about{max-width:340px;color:var(--text2);font-weight:300;margin-bottom:1.2rem}
+.f-status{display:inline-flex;align-items:center;gap:.2rem;font-size:.78rem}
+footer h4{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:1rem}
+footer ul{list-style:none;display:grid;gap:.55rem}
+footer ul a{text-decoration:none;color:var(--text3);transition:color .25s,padding-left .3s var(--ease)}
+footer ul a:hover{color:var(--teal);padding-left:6px}
+.f-bottom{border-top:1px solid var(--line);padding:1.3rem 3.5rem}
+.f-bottom div{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.78rem}
+.totop{display:inline-flex;align-items:center;gap:.5rem;color:var(--text2);text-decoration:none;border:1px solid var(--line2);border-radius:99px;padding:.35rem .9rem;transition:.3s var(--ease)}
+.totop:hover{color:#2a1d04;background:var(--gold);border-color:var(--gold)}
+footer .f-top{padding-left:3.5rem;padding-right:3.5rem;width:100%}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
@@ -195,7 +209,9 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
   .ach{grid-template-columns:1fr}
   .project{grid-template-columns:1fr;padding:1.5rem}
   .visit{display:none}
-  footer{flex-direction:column;text-align:center;padding:2rem 1.4rem}
+  footer .f-top{grid-template-columns:1fr;gap:2rem;padding:3rem 1.4rem 2rem}
+  .f-bottom{padding:1.2rem 1.4rem}
+  .f-bottom div{flex-direction:column;text-align:center}
 }
 </style>
 </head>
@@ -361,9 +377,38 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:2rem 3.5re
 </main>
 
 <footer>
-  <span class="fb">Edouard Kalume</span>
-  <span>© <span id="year"></span> — All rights reserved</span>
-  <span>East Africa · EAT UTC+3</span>
+  <div class="f-top">
+    <div>
+      <a class="fb" href="#home" aria-label="Back to top"><i>E</i>Edouard Kalume</a>
+      <p class="f-about">Computer Scientist and FullStack Developer building reliable web and mobile experiences across East Africa.</p>
+      <span class="f-status ok">Open to work</span>
+    </div>
+    <nav aria-label="Footer navigation">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#positions">Target positions</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:edevklm@gmail.com">edevklm@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/edward-kalume-a2819b321/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/edwarddev28" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li>East Africa (DRC &amp; Tanzania) · EAT UTC+3</li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <div>
+      <span>© <span id="year"></span> Edouard Kalume Mulengey. All rights reserved.</span>
+      <a class="totop" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </div>
 </footer>
 
 <script>
